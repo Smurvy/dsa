@@ -15,8 +15,8 @@
 - big O is worst case
     - anything pretaining to big is measuring worst case
 
-|   complexity  |   name    |   sample  |
------------------------------------------
+|   complexity  |   name    |   sample                          |
+-----------------------------------------------------------------
 |   O(1)        |   constant|   a simple add numbers function   |
 | O(N)          | linear    | loop through numbers from 1 to n  |
 | O(LogN)       |logarithmic| find an element in a sorted array |
@@ -25,7 +25,7 @@
 
 ##### O(1)
 - most efficient complexity
-- a flat line at 0 on the y axis (number of operations)
+- a flat line at 1 on the y axis (number of operations)
 - multiplying two numbers, drawing a card at random from a deck
 
 ##### O(N)
@@ -44,3 +44,53 @@ def printNumbers(number):
 ```
 each of these loops is **O(n)** complexity, so adding together, the function has a complexity of **O(2n)**
 - the first rule fo simplifying algorithsm is dropping these constants
+- we optimize for least number of operations, not for hardware (not everyting is running on a supercomputer!)
+- asymptomatic analysis ignores things like hardware to ensure objective truth when observing algorithms
+
+##### O(n^2)
+```python
+def print_items(n):
+    for i in range(n):
+        for j in range(n):
+            print(i,j)
+```
+- double loops create O(n^2) time complexities
+    - adding loops within loops increases this (i.e adding a loop within the "j loop" above will increase the time complexity from **O(n^2)** to **O(n^3)**)
+- this is very inefficient code
+
+###### dropping Non Dominant Terms
+given code:
+```python
+def print_items(n):
+    for i in range(n):
+        for j in range(n):
+            print(i,j)
+    for k in range(n):
+        print(k)
+```
+we know that the first nest loop has a **O(n^2)** and the second loop has **O(n)**. The technical copmlexity of the algorithm can be expressed in **O(n^2 + n)**.
+however, the n can be dropped because of how little difference it makes compared to the **O(n^2)**
+
+##### O(logn)
+- divide and conquer approach
+- the base of the log is dependent on how many times you divide the array
+    - divide array into two parts ->  log~2~n, 3 parts -> log~3~n, etc.
+- can use attributes besides numerical value when finding what apart of the list the card is in
+- relatively flat compared to O(n) and  O(n^2)
+
+##### Space Complexity
+- each time a function is called, it is added to the stack
+- space complexity is dependent on the number of calls on the stack
+- if your recursive function makes **n** calls based on **n** input, then it is said to have O(n) space copmlexity
+    -> you can now see how this applies with all of the other complexities so far
+###### exception
+```python
+def pair_sum_sequence(n):
+    total = 0
+    for i in range(n):
+        total = total + pair_sum(i,i+1)
+    return total
+def pair_sum(a,b):
+    return a + b
+```
+- because the `paar_sum()` function does not exists simaltaneously on the stack (it is being calculated in the moment, w/o recursion), the `pair_sum_sequence` function is said to have **O(1)** space copmlexity
