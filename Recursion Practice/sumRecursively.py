@@ -1,11 +1,14 @@
-# sum multidimensional array???
+# sums and dimension of array
 
-def sumRecursively(list):
-    if(type(list) == int):
-        return list
-    
-    if(len(list) == 1):
-        return sumRecursively(list[0])
+def recursiveSum(myList):
+    if(type(myList[0]) == list and len(myList) > 1):
+        return recursiveSum(myList[0]) + recursiveSum(myList[1:])
+    elif(type(myList[0]) == int and len(myList) > 1):
+        return myList[0] + recursiveSum(myList[1:])
+        
+    elif(type(myList[0]) == list and len(myList) == 1):
+        return recursiveSum(myList[0])
     else:
-        return list[0] + sumRecursively[1:]
-    
+        return myList[0]
+
+print(recursiveSum([1,2,3,[2,3,4],[1,2,3],[1,2,3]]))

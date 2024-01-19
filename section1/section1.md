@@ -34,3 +34,13 @@
             - tree
             - graphs
             - objects/classes
+
+### What are the types of algorithms
+sorting - store in data in ascending/descending order
+    - insert
+    - selection
+Search - find a specific value in a data set
+Graph - work with data that can be represent as a graph
+dynamic programming - solve problems by breaking them down into smaller sub-problems
+Divide and conquer - similar to dyanima, divide problem into smaller problems, work from there
+Recursive
