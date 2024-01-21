@@ -93,4 +93,31 @@ def pair_sum_sequence(n):
 def pair_sum(a,b):
     return a + b
 ```
-- because the `paar_sum()` function does not exists simaltaneously on the stack (it is being calculated in the moment, w/o recursion), the `pair_sum_sequence` function is said to have **O(1)** space copmlexity
+- because the `pair_sum()` function does not exists simaltaneously on the stack (it is being calculated in the moment, w/o recursion, gets removed after it is calculated), the `pair_sum_sequence` function is said to have **O(n)** space complexity
+
+##### Diffreent Terms for Input - add vs multiply
+```python
+def print_items(a,b):
+    for i in range(a):
+        print(i)
+    for j in range(b):
+        print(j)
+```
+- this is **not O(n)** time complexity because that would assum a == b
+- instead, you add them together so the actualy time complexity is **O(a+b)**
+###### Rules
+- if algorithm is in the form "do this, **then** do this other thing
+    - **O(a+b)**
+- if algorithm is in the form "do this for each time you do that", then you have an **O(a*n)** time complexity algorithm
+
+#### How measure time compleixty of code using Big O
+1. Any assingment statements and if statements that are executed once regfardless of the size of problem
+    - O(1)
+2.  A simple "for" loop from 0 to n (with no internal loops)
+    - O(n)
+3. A nested loop of the same type (each loops runs same amount of times) takes quadratic time complexity
+    - O(n^2)
+4. A loop in which the controlling parameter is divide by two at each step
+    - O(log n)
+5. When dealing with multiple statements just add them up
+    - O(a*b)
