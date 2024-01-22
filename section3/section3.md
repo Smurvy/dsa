@@ -49,7 +49,8 @@ npArray = np.array([1,2,3,4]) # add some numbers!
 **At the end**
 - insert elements at the end with new index
 - much more efficient than the other insertions
-- **O(1)**
+- **O(1)**'
+
 to revisit a code sample from earlier....
 ```python
 import array
@@ -63,3 +64,14 @@ myArray.inser(0,6) # inserting at index 0 with element 6
 
 ##### Array Traversal
 - traversal is when you look at each element of an array
+
+##### Deleting from an array
+- deletion of last eleemnt is very efficient because there is  no reassigning of indices, however deleting form the middle of the array will cause all elements indices to shift down one.
+
+##### When should I use arrays?
+- when you want to store multiple variables of the same type
+- when you want to access a random point in the array
+
+###### Avoid
+- reservememory block in array
+    - if you add elements beyond the  length fo the array, you have to expand the array whicih is memory consuming
