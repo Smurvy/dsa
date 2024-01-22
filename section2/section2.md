@@ -15,13 +15,13 @@
 - big O is worst case
     - anything pretaining to big is measuring worst case
 
-|   complexity  |   name    |   sample                          |
------------------------------------------------------------------
-|   O(1)        |   constant|   a simple add numbers function   |
-| O(N)          | linear    | loop through numbers from 1 to n  |
-| O(LogN)       |logarithmic| find an element in a sorted array |
-| O(N^2)        | quadratic |   nested loops                    |
-| O(2^N)        | exponential| double recursion in fibonacci    |
+|   complexity  |   name     |   sample                          |
+------------------------------------------------------------------
+|   O(1)        |   constant |   a simple add numbers function   |
+| O(N)          | linear     | loop through numbers from 1 to n  |
+| O(LogN)       |logarithmic | find an element in a sorted array |
+| O(N^2)        | quadratic  |   nested loops                    |
+| O(2^N)        | exponential| double recursion in fibonacci     |
 
 ##### O(1)
 - most efficient complexity

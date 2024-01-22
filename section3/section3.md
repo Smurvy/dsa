@@ -11,5 +11,55 @@
 - 1 dimensional
 - multi-dimensional
 
+##### Arrays in memory
+###### 1 Dimensional
+- the system chooose a random space in RAM, though **the space chosen is contiguous**
+###### 2 Dimensional
+- in memory, the array is represented as a 1 dimensional array with
+- this is true for any dimension of array
+- How does the copmuter recognize, rows,columns,depth,etc?
+##### Create an  array in python
 
-1,1,2,3,5,8,13,21,34,55
+###### With array module
+```python
+import array
+
+myArray = array.array('i') # empty array with type integer
+myArray = array.array('i',[1,2,3,4]) # add some numbers!
+```
+- only accepts primtive data types
+
+###### With NumPy
+```python
+import numpy as np
+
+npArray = np.array([],dtype = int) # empty array with type integer
+npArray = np.array([1,2,3,4]) # add some numbers!
+
+```
+- wider array of features than the array module
+
+##### Inserting into an array
+**At beginning**
+- all elements indeices will be  shifted forward once
+- very time consuming
+- **O(n)**
+**In the middle**
+- anything to the right of the insertion point will have their indices push to the right
+**At the end**
+- insert elements at the end with new index
+- much more efficient than the other insertions
+- **O(1)**
+to revisit a code sample from earlier....
+```python
+import array
+
+myArray = array.array('i') # empty array with type integer
+myArray = array.array('i',[1,2,3,4]) # add some numbers!
+
+myArray.inser(0,6) # inserting at index 0 with element 6
+```
+- having a number greater than the last index of the array will always put the number at the end of the array, no matter the index
+
+##### Array Traversal
+- traversal is when you look at each element of an array
