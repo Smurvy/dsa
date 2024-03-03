@@ -2,7 +2,10 @@ package algImplementations;
 
 public class bubbleSort {
     public static void main(String[] args){
-        int[] unsorted = {};
+        
+        int[] unsorted = {2,6,3,8,2};
+        
+        //int[] unsorted = {9,3,10,5,4};
 
         int[] sorted = sort(unsorted);
 
@@ -14,18 +17,20 @@ public class bubbleSort {
     }
 
     public static int[] sort(int[] arr){
-    
-        for(int i = 0; i < arr.length; i++){
         
-            for(int j = i;j < arr.length;j++){
-                if(j != arr.length - 1 && arr[j] > arr [j + 1]){
+        for(int i = 0; i < arr.length;i++){
+            for(int j = 0; j < arr.length - 1; j++){
+                if(arr[j] > arr[j + 1]){
                     int temp = arr[j];
-
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                } 
+                }
+                
             }
+
         }
+        // this loop moves the first value larger than its left value up the list until it finds a value that is larger than it
+        
         return arr;
     }
 }
