@@ -23,16 +23,14 @@ def sort(arr):
     
     
     for x in arr:
-        if(x <= arr[pivot]):
+        if(x < arr[pivot]):
+            
             small.append(x)
-        else:
+        elif (x > arr[pivot]):
             big.append(x)
             
-            
-    print(small)
-    print(big)
-    return sort(small) + sort(big)
+    return sort(small) + [arr[pivot]] + sort(big)
     
     
-print(sort([6,456,8,2,3]))
+print(sort([6,456,8,2,455,8,8,8]))
     
