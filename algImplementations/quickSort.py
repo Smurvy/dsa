@@ -22,12 +22,14 @@ def sort(arr):
     big = []
     
     
-    for x in arr:
-        if(x < arr[pivot]):
+    for x in range(len(arr)):
+        if(x == pivot):
+            continue
+        if(arr[x] <= arr[pivot]):
             
-            small.append(x)
-        elif (x > arr[pivot]):
-            big.append(x)
+            small.append(arr[x])
+        elif (arr[x] > arr[pivot]):
+            big.append(arr[x])
             
     return sort(small) + [arr[pivot]] + sort(big)
     
