@@ -10,8 +10,9 @@ def search(arr,targetVal):
         return point1
     elif(targetVal == arr[point2]):
         return point2
-    #elif(len(arr) == 3):
-        #return "element not found"
+    elif(len(arr) == 1):
+        print("element not found")
+        return -1
     if (targetVal < arr[point1]):
         return search(arr[:point1],targetVal)
     elif(targetVal < arr[point2]):
@@ -20,5 +21,5 @@ def search(arr,targetVal):
         return point2 + search(arr[point2:],targetVal)
 
 
-myList = [6,789,4560]
-print(search(myList,4560))
+myList = [6,7,8,9,10]
+print(search(myList,20))
