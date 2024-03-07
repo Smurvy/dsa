@@ -20,22 +20,18 @@ def search(arr, step,target_val):
 
 def jump(arr,step,target_val):
     if(len(arr) <= step):
-        for x in range(len(arr)):
-            if arr[x] == target_val:
+        for x in range((len(arr))):
+            if (arr[x] == target_val):
                 return x
-        
-        return 0
-    
+        return -1
 
-    if(arr[step - 1] > target_val):
-        
-        for x in range(len(arr[:step])):
-            if arr[x] == target_val:
+    if(arr[step] > target_val):
+        for x in range(len(arr)):
+            if(arr[x] == target_val):
                 return x
             
-        
     return step + jump(arr[step:],step,target_val)
 
 
 #only works if the indnex of the element is smaller than step??
-print(jump([1,2,3,4,5,6,7,8],4,4))
+print(jump([1,2,3,4,5,6,7,8],8,9))
